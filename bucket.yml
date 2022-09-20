@@ -17,9 +17,9 @@ Resources:
         Properties:
             Bucket: !Ref 'WebsiteBucket'
             PolicyDocument:
-            Statement:
-            - Sid: PublicReadForGetBucketObjects
-              Effect: Allow
-              Principal: '*'
-              Action: s3:GetObject
-              Resource: !Join ['', ['arn:aws:s3:::', !Ref 'WebsiteBucket', /*]]
+                Statement:
+                  - Sid: PublicReadForGetBucketObjects
+                    Effect: Allow
+                    Principal: '*'
+                    Action: s3:GetObject
+                    Resource: !Join ['', ['arn:aws:s3:::', !Ref 'WebsiteBucket', /*]]
