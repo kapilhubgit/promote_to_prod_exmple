@@ -1,0 +1,8 @@
+aws cloudformation deploy \
+--template-file cloudfront.yml \
+--stack-name kapil-production-distro \
+--parameter-overrides PipelineID="${kapil-promote-to-prod-exmple}" \ # Name of the S3 bucket you created manually.
+--tags project=udapeople &
+
+
+aws cloudformation deploy --template-file cloudfront.yml --stack-name kapil-production-distro --parameter-overrides PipelineID="${kapil-promote-to-prod-exmple}" --tags project=udapeople &
