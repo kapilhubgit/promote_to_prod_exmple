@@ -214,4 +214,5 @@ workflows:
   my_workflow:
     # Run the welcome/run job in its own container
     jobs:
-      - create_and_deploy_front_end
+      #- create_and_deploy_front_end
+      - get_last_deployment_id
