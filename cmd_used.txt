@@ -5,4 +5,12 @@ aws cloudformation deploy \
 --tags project=udapeople &
 
 
-aws cloudformation deploy --template-file cloudfront.yml --stack-name kapil-production-distro --parameter-overrides PipelineID="${kapil-promote-to-prod-exmple}" --tags project=udapeople &
+aws cloudformation deploy --template-file cloudfront.yml --stack-name kapil-production-distro --region us-east-1 --parameter-overrides PipelineID="kapil-promote-to-prod-exmple" --tags project=udapeople &
+
+aws cloudformation delete-stack --stack-name kapil-production-distro --region us-east-1
+
+AWS_ACCESS_KEY_ID	
+
+AWS_DEFAULT_REGION	
+
+AWS_SECRET_ACCESS_KEY
