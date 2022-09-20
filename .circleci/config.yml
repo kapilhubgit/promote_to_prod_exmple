@@ -18,7 +18,10 @@ jobs:
             command: |
                 echo ${CIRCLE_WORKFLOW_ID}
                 echo ${CIRCLE_WORKFLOW_ID:0:7}
-                aws cloudformation deploy --template-file bucket.yml --stack-name kapil-stack-bucket-${CIRCLE_WORKFLOW_ID} --parameter-overrides MyBucketName="kapil-bucket-${CIRCLE_WORKFLOW_ID}"
+                aws cloudformation deploy \
+                --template-file bucket.yml \
+                --stack-name kapil-stack-bucket-${CIRCLE_WORKFLOW_ID:0:7} \
+                --parameter-overrides MyBucketName="kapil-bucket-${CIRCLE_WORKFLOW_ID:0:7}"
                 
 workflows:
   # Name the workflow
